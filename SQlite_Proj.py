@@ -34,13 +34,36 @@ def dynamic_data_entry():
     conn.commit()
 
 
+# method for reading the rows of information from a database
+def print_bd_rows():
+    c.execute('SELECT * FROM newTable')
+    for row in c.fetchall():
+        print(row)
+
+
+# reads and prints all unix timestaps larger than the one specified in the method.
+def read_from_db():
+    c.execute('SELECT * FROM newTable WHERE unix > 1553118039')
+    #data = c.fetchall()
+    #print(data)
+    for row in c.fetchall():
+        print(row)
+
 # Function call for the creating a table called newTable
-creat_table()
+#creat_table()
 
 # For loop to generate data inserted into the newTable
-for i in range(10):
-    dynamic_data_entry()
-    time.sleep(0.5)
+#for i in range(10):
+#    dynamic_data_entry()
+#    time.sleep(0.5)
+
+
+print_bd_rows()
+
+read_from_db()
+
+
+
 
 #closes the connection and cursor. 
 c.close()
