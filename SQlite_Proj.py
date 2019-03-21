@@ -49,13 +49,17 @@ def read_from_db():
     for row in c.fetchall():
         print(row)
 
-# Function call for the creating a table called newTable
-#creat_table()
+
+
+#Function call for the creating a table called newTable
+creat_table()
+
+
 
 # For loop to generate data inserted into the newTable
-#for i in range(10):
-#    dynamic_data_entry()
-#    time.sleep(0.5)
+for i in range(10):
+    dynamic_data_entry()
+    time.sleep(0.5)
 
 
 print_bd_rows()
